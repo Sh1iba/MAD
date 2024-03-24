@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Project_4</string>
+    <string name="Name">Name</string> //имя в 1 активити
+    <string name="Name2">Name2</string> //
+    <string name="textView">textView</string>
+    <string name="Next">Next</string> //кнопка
+    <string name="OK">OK</string> //кнопка
+
+</resources>

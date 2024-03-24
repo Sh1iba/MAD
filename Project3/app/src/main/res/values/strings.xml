@@ -1,0 +1,10 @@
+<resources>
+        <string name="app_name">Project 3</string>
+        <string name="T">Name</string>
+        <string name="T2">Age</string>
+        <string name="T3">Group</string>
+        <string name="T4">Grade</string>
+        <string name="button">Program launch</string>
+        <string name="button2">Declarative launch</string>
+
+</resources>

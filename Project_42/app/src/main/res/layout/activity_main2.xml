@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wall"
+    tools:context=".MainActivity2">
+
+    <FrameLayout
+        android:id="@+id/fragment2"
+        android:layout_width="328dp"
+        android:layout_height="375dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.921"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment3"
+        android:layout_width="337dp"
+        android:layout_height="363dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints"></androidx.fragment.app.FragmentContainerView>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:onClick="onThirdFragment"
+        android:text="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.315"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:onClick="onSecondFragment"
+        android:text="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.208"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="59dp"
+        android:layout_height="60dp"
+        android:onClick="onFirstFragment"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.105"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button33"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:onClick="onThirdFragment_2"
+        android:text="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.895"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="59dp"
+        android:layout_height="60dp"
+        android:onClick="onFirstFragment_2"
+        android:text="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.67"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="59dp"
+        android:layout_height="61dp"
+        android:onClick="onSecondFragment_2"
+        android:text="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        app:layout_constraintVertical_bias="0.782"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Динамический метод"
+        android:textColor="#A9AFD3"
+        android:textSize="55px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="fragmentContainerView"
+        android:textColor="#A9AFD3"
+        android:textSize="55px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="391dp"
+        android:layout_height="82dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47"
+        app:srcCompat="@drawable/_111" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

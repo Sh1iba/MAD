@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="T">Имя</string>
+    <string name="T2">Возраст</string>
+    <string name="T3">Группа</string>
+    <string name="T4">Оценка</string>
+    <string name="button">Програмный запуск</string>
+    <string name="button2">Декларативный запуск</string>
+</resources>
