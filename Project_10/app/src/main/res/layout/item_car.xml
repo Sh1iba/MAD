@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="1075px"
-    android:layout_height="80px">
+    android:layout_height="84px">
 
     <TextView
         android:id="@+id/car_id"
@@ -19,8 +19,8 @@
 
     <TextView
         android:id="@+id/car_mark"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
+        android:layout_width="53dp"
+        android:layout_height="36dp"
         android:text="mark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +43,8 @@
 
     <TextView
         android:id="@+id/car_color"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
+        android:layout_width="59dp"
+        android:layout_height="34dp"
         android:text="color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,12 +55,12 @@
 
     <TextView
         android:id="@+id/car_price"
-        android:layout_width="44dp"
-        android:layout_height="37dp"
+        android:layout_width="74dp"
+        android:layout_height="34dp"
         android:text="price"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />

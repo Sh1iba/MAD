@@ -37,7 +37,7 @@ SharedPreferences sharedPreferences;
         else {
     // Сохранение строкового значения
         editor.putString("username", username);
-    // Сохранение изменений
+    // Сохранение измененийа
         editor.apply();
         Toast.makeText(getApplicationContext(), "Имя пользователя успешно сохранено",
                 Toast.LENGTH_SHORT).show();

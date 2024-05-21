@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -68,33 +69,31 @@ public class DataBase extends AppCompatActivity {
             if (dbHelper.addCar(car)) {
                 car_list.add(car);
                 adapter.notifyItemInserted(car_list.size() - 1);
-                Toast.makeText(this, "Contact saved successfully!", Toast.LENGTH_SHORT).show();
-
-                carsList.setLayoutManager(new LinearLayoutManager(this)); //Устанавливает макет отображения - гориозонтально
-                carsList.setAdapter(adapter); // Устанавливаем адаптер для RecyclerView
+                Toast.makeText(this, "Данные успешно сохранены!", Toast.LENGTH_SHORT).show();
 
             }
             else {
-                Toast.makeText(this, "Failed to save contact",
+                Toast.makeText(this, "Не удалось сохранить данные",
                         Toast.LENGTH_SHORT).show();
             }
         }
     }
 
-    public void Find(View view){
-        //ищем контакт по номеру телефона
-         String mark = markInput.getText().toString();
-         Car foundContact = dbHelper.findCar(mark);
-         if (foundContact != null) {
-             markInput.setText(foundContact.getMark());
-             Toast.makeText(this, "Contact found: " +
-                     foundContact.getMark(), Toast.LENGTH_SHORT).show();
-            }
-         else {
-             Toast.makeText(this, "Contact not found",
-                     Toast.LENGTH_SHORT).show();
-         }
+    @SuppressLint("NotifyDataSetChanged")
+    public void Find(View view) {
+        String mark = markInput.getText().toString();
+        List<Car> foundCars = dbHelper.findCar(mark);
+
+        if (!foundCars.isEmpty()) {
+            car_list.clear(); // Очистищаем текущий список
+            car_list.addAll(foundCars); // Добавляем найденные машины в список
+            adapter.notifyDataSetChanged(); // Уведомите адаптер об изменении данных
+            Toast.makeText(this, "Найдено " + foundCars.size() + " машин по марке " + mark, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Машины по марке " + mark + " не найдены", Toast.LENGTH_SHORT).show();
         }
+    }
+
 
     public void Delete(View view){
 
@@ -110,10 +109,10 @@ public class DataBase extends AppCompatActivity {
             }
             if (position != -1) {
                 adapter.notifyItemRemoved(position);
-                Toast.makeText(this, "Contact deleted successfully!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Данные успешно удалены!", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(this, "Contact not found",
+                Toast.makeText(this, "Данные не найдены",
                         Toast.LENGTH_SHORT).show();
             }
             }
@@ -123,15 +122,36 @@ public class DataBase extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    public void Update(View view){
 
-    // Метод для обновления списка контактов после изменения в базе данных
-    private void refreshContactsList(DatabaseHelper dbHelper,
-                                     List<Car> cars, CarAdapter adapter, RecyclerView
-                                             contactsList) {
-        cars = dbHelper.getAllCars(); // Загружаем обновленный список
-        adapter = new CarAdapter(cars);
-        contactsList.setAdapter(adapter);
+        String oldMark = idInput.getText().toString(); //Считаем что это старая марка для поиска
+        String newPrice = priceInput.getText().toString(); //Новая цена для обновления
+        String newMark = idInput.getText().toString(); //Новая марка для обновления
+
+        if (dbHelper.updateCar(oldMark, newPrice,
+                newMark)) {
+            Toast.makeText(this, "Данные успешно обновлены!", Toast.LENGTH_SHORT).show();
+            // Обновляем список и адаптер
+            List<Car> foundCars = dbHelper.getAllCars();
+            car_list.clear(); // Очищаем текущий список
+            car_list.addAll(foundCars); // Добавляем найденные машины в список
+            adapter.notifyDataSetChanged(); // Уведомите адаптер об изменении данных
+           } else {
+               Toast.makeText(this, "Не удалось обновить данные",
+                       Toast.LENGTH_SHORT).show();
+           }
     }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void getAllCar(View view){
+        List<Car> foundCars = dbHelper.getAllCars();
+        car_list.clear(); // Очищаем текущий список
+        car_list.addAll(foundCars); // Добавляем найденные машины в список
+        adapter.notifyDataSetChanged(); // Уведомите адаптер об изменении данных
+    }
+
+
 
 }
 

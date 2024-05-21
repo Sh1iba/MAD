@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String createTable = "CREATE TABLE " + TABLE_NAME + " (" +
-                COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_ID + " INTEGER, " +
                 COLUMN_MARK + " TEXT, " +
                 COLUMN_YearOfRelease + " TEXT, " +
                 COLUMN_COLOR + " TEXT, " +
@@ -36,8 +36,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
-    // Добавление нового контакта
-    public boolean addCar(Car car) {
+    // Добавление новой машины
+    public boolean addCar(Car car) { //метод getReadableDatabase() (получение базы данных для чтения)
+       // или getWritableDatabase() (запись данных в БД)
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_ID, car.getId());
@@ -49,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return result != -1;
     }
-    // Удаление контакта по номеру телефона
+    // Удаление машины по марке
     public boolean deleteCar(String mark) {
         SQLiteDatabase db = this.getWritableDatabase();
         int result = db.delete(TABLE_NAME, COLUMN_MARK + " = ?", new String[]{mark});
@@ -57,30 +58,44 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result > 0;
     }
     // Поиск машины по марке
-    public Car findCar(String mark) {
+    public List<Car> findCar(String mark) {
+        List<Car> cars = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_MARK},
+        Cursor cursor = db.query(TABLE_NAME, new String[]{COLUMN_ID, COLUMN_MARK,
+                        COLUMN_YearOfRelease, COLUMN_COLOR, COLUMN_PRICE},
                 COLUMN_MARK + " = ?", new String[]{mark}, null,
                 null, null);
         if (cursor != null && cursor.moveToFirst()) {
-            Car car = new Car(
-                    cursor.getInt(0),
-                    cursor.getString(1),
-                    cursor.getString(2),
-                    cursor.getString(3),
-                    cursor.getString(4));
-            cursor.close();
-            db.close();
-            return car;
+            do {
+                Car car = new Car(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4));
+                cars.add(car);
+            } while (cursor.moveToNext());
         }
         if (cursor != null) {
             cursor.close();
         }
         db.close();
-        return null;
+        return cars;
     }
 
-    // Получение всех контактов
+    public boolean updateCar(String oldId, String newPrice,
+                                 String newId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(COLUMN_ID, newId);
+        cv.put(COLUMN_PRICE, newPrice);
+        // Обновляем запись, где марка машины =  oldMark
+        int result = db.update(TABLE_NAME, cv, COLUMN_ID + " = ?", new String[]{oldId});
+        db.close();
+        return result > 0;
+    }
+
+    // Получение всех машин
     public List<Car> getAllCars() {
         List<Car> contactList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();

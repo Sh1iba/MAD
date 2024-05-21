@@ -82,49 +82,60 @@
         android:id="@+id/save_button"
         android:layout_width="353dp"
         android:layout_height="51dp"
-        android:text="save"
         android:onClick="Save"
+        android:text="save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
-
-    <Button
-        android:id="@+id/delete_button"
-        android:layout_width="353dp"
-        android:layout_height="51dp"
-        android:text="delete"
-        android:onClick="Delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.554" />
-
-    <Button
-        android:id="@+id/find_button"
-        android:layout_width="353dp"
-        android:layout_height="51dp"
-        android:text="find"
-        android:onClick="Find"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <Button
         android:id="@+id/update_button"
         android:layout_width="353dp"
         android:layout_height="51dp"
-        android:text="update"
         android:onClick="Update"
+        android:text="update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:layout_constraintVertical_bias="0.351" />
+
+    <Button
+        android:id="@+id/find_button"
+        android:layout_width="353dp"
+        android:layout_height="51dp"
+        android:onClick="Find"
+        android:text="find"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="353dp"
+        android:layout_height="51dp"
+        android:onClick="Delete"
+        android:text="delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/all_button"
+        android:layout_width="353dp"
+        android:layout_height="51dp"
+        android:onClick="getAllCar"
+        android:text="Output All"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -142,7 +153,7 @@
         android:id="@+id/textView2"
         android:layout_width="391dp"
         android:layout_height="33dp"
-        android:text="Id    |    Mark    |    YearOfRelease    |    Color    |    Price"
+        android:text="Id    |      Mark    |  YearOfRelease  |  Color    |    Price"
         android:textSize="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -150,4 +161,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.636" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
