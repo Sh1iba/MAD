@@ -77,10 +77,24 @@ public class MainActivity extends AppCompatActivity {
         super.onStop();
         Log.i(TAG, "onStop: ");
     }
-
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "onRestart: ");
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i(TAG, "onPause: ");
+    }
     @Override
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "onResume: ");
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, "onDestroy: ");
     }
 }

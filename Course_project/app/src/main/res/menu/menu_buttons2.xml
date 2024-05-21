@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/main"
+            android:title="Главная"
+            android:orderInCategory="1"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/info"
+            android:icon="@drawable/hand"
+            android:title="О программе"
+            android:orderInCategory="10"
+            app:showAsAction="never"/>
+
+        <item
+            android:id="@+id/money"
+            android:icon="@drawable/money"
+            android:title="Кошелёк"
+            android:orderInCategory="2"
+            app:showAsAction="never"/>
+        <item
+            android:id="@+id/pay_history"
+            android:icon="@drawable/pay_history"
+            android:title="История платежей"
+            android:orderInCategory="4"
+            app:showAsAction="never"/>
+
+</menu>
