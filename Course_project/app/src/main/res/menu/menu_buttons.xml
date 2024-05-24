@@ -20,13 +20,13 @@
             android:id="@+id/money"
             android:icon="@drawable/money"
             android:title="Кошелёк"
-            android:orderInCategory="2"
+            android:orderInCategory="4"
             app:showAsAction="never"/>
         <item
-            android:id="@+id/pay_history"
-            android:icon="@drawable/pay_history"
-            android:title="История платежей"
-            android:orderInCategory="4"
+            android:id="@+id/pay"
+            android:icon="@drawable/pay"
+            android:title="Оплата"
+            android:orderInCategory="2"
             app:showAsAction="never"/>
 
 </menu>
